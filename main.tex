@@ -1,0 +1,120 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright © 2023 Haochen WANG (王昊辰).
+% Contact: whch.o@outlook.com： +86 18921173379； +31 0633217019； +44 07579859390
+%YinRen-YuShu 3401, WuXi, JiangSu, PRC; 214011 （中华人民共和国，江苏，无锡，银仁-御墅，3401； 214011）
+%
+% This LaTeX template has been developed and produced by Haochen WANG (王昊辰).
+% Excluding the written content, this template is distributed under a Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+% Please adhere to the terms of this license when utilising this template.
+% Comprehensive information about the license can be found at:
+%https://creativecommons.org/licenses/by-nc/4.0/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+\usepackage[margin=20mm, paperwidth=185mm, paperheight=260mm]{geometry} % 设置16开纸张大小和边距
+\usepackage[UTF8]{ctex} % 支持中文
+\usepackage{fontspec} % 使用fontspec宏包
+%\setmainfont{CMU Serif} % 设置英文字体CMU
+\setmainfont{Liberation Serif} % 自由衬线
+\setCJKmainfont{SourceHanSerifSC-Medium.otf} % 设置中文字体为思源宋体
+\usepackage{lipsum} % 用于生成随机文字
+\usepackage{ccicons} % 创作共享图标
+\usepackage{hyperref} % 提供超链接功能
+\hypersetup{
+    colorlinks=false, %取消超链接的颜色
+    pdfborder={0 0 1}, %显示超链接的下划线
+    urlbordercolor={0 0 1} %设定超链接方框颜色
+}
+\usepackage{fancyhdr} % 添加fancyhdr宏包
+\usepackage[ddmmyyyy]{datetime}%日期
+\usepackage{indentfirst} % 用于段首缩进
+\usepackage{ragged2e} % 用于对齐
+\usepackage{tabularx} % 用于表格
+\usepackage{indentfirst} % 添加indentfirst宏包，使所有的段落都在开始时自动缩进
+\usepackage{titlesec} %用于设置标题
+\usepackage{ulem} %下划线
+\usepackage{pgfplots}%用于蜘蛛图
+\pgfplotsset{compat=1.15} %用于蜘蛛图
+\usepgfplotslibrary{polar}%用于蜘蛛图
+\usepackage{wrapfig}%用于蜘蛛图
+
+\usepackage{xcolor}%字体颜色
+\definecolor{light-gray}{gray}{0.8}%定义颜色light-gray
+
+\titleformat{\section}
+{\normalfont\fontsize{20}{25}\bfseries} %标题字号
+{\thesection}
+{1em}
+{}
+
+\pagestyle{fancy} % 设置页面样式为fancy
+\fancyhead{} % 清空页眉设置
+\fancyfoot{} % 清空页脚设置
+\fancyhead[R]{\fontsize{14}{17}\selectfont\textbf\thepage} %右上角打上页码
+\renewcommand{\headrulewidth}{0pt} % 去除页眉横线
+
+\setlength\parindent{2em} %首行缩进
+
+\setcounter{section}{-1}%目录从0开始算
+
+\begin{document}
+
+\begin{titlepage} % 开始创建标题页
+
+\newgeometry{vmargin={20mm}, hmargin={16mm,16mm}}  % 设置自定义边距
+
+\vspace*{\stretch{0.382}} % 使用黄金分割比例来分配空间
+
+% 标题部分
+\begin{flushright} % 使用 flushright 环境来实现右对齐
+\fontsize{40}{0}\selectfont\textbf{BMD指南志} % \fontsize 设置特大号字体，\textbf 使文字加粗
+\end{flushright}
+
+\vspace*{\stretch{0.236}} % 使用黄金分割比例来分配空间
+
+% 作者部分
+\begin{flushright} % 使用 flushright 环境来实现右对齐
+\fontsize{28}{0}\selectfont{王昊辰\textsuperscript{1}} % \fontsize 设置较大号字体，\textbf 使文字加粗
+\end{flushright}
+
+\vspace*{\stretch{0.05}} % 使用黄金分割比例来分配空间
+
+% co-author部分
+\begin{flushright} % 使用 flushright 环境来实现右对齐
+\fontsize{20}{0}\selectfont{张先治\textsuperscript{2}, 马润禹\textsuperscript{3},刘彦菁\textsuperscript{4},祁晨晨\textsuperscript{5}, 孙天辰\textsuperscript{6}} % Co-author写上
+\end{flushright}
+
+\vspace*{\stretch{0.382}} % 使用黄金分割比例来分配空间
+
+% 版权信息部分
+\begin{flushright} 
+\fontsize{16}{16}\selectfont
+\footnotesize{Copyright © 2023 Haochen WANG （王昊辰）.}\\
+\footnotesize{Address: YinRen-YuShu 3401, WuXi, JiangSu, P.R.C.; 214011}\\
+\footnotesize{Contact: \href{mailto:whch.o@outlook.com}{whch.o@outlook.com}}\\
+\footnotesize{Unless otherwise noted, contents within this brochure are licensed under the \ccbyncsa\ \href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{\uline{CC BY-NC-SA 4.0}.}}\\
+\footnotesize{Pre-release, updated as of \today}
+\end{flushright}
+
+\vspace*{\stretch{0.618}} % 使用黄金分割比例来分配空间
+
+\end{titlepage} % 结束创建标题页
+
+\fancyfoot[L]{\textcolor{light-gray}{Copyright © 2023 by Haochen WANG （王昊辰）}} %每页页脚标注，防止被中介偷掉
+
+
+\tableofcontents % 生成目录
+
+
+\newpage % 换页
+
+{\section{序}
+\fontsize{11}{15}\selectfont % 字体大小和行距
+
+\input{序}
+\newpage\input{课程解读}
+\newpage\input{第一年之后}
+\newpage\input{其它}
+\newpage\input{跋}
+}
+\end{document}
