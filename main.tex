@@ -40,12 +40,15 @@
 
 \usepackage{xcolor}%字体颜色
 \definecolor{light-gray}{gray}{0.8}%定义颜色light-gray
-
+\usepackage{zhnumber} % 导入将数字转换为中文数字的宏包
+%\renewcommand\thesection{\zhdigits*{\arabic{section}}} 
+% 重定义section编号的显示方式，将阿拉伯数字转换为中文的大写数字，“壹、贰、叁”形式。
 \titleformat{\section}
 {\normalfont\fontsize{20}{25}\bfseries} %标题字号
 {\thesection}
 {1em}
 {}
+\setcounter{section}{-1}%目录从0开始算
 
 \pagestyle{fancy} % 设置页面样式为fancy
 \fancyhead{} % 清空页眉设置
@@ -54,8 +57,6 @@
 \renewcommand{\headrulewidth}{0pt} % 去除页眉横线
 
 \setlength\parindent{2em} %首行缩进
-
-\setcounter{section}{-1}%目录从0开始算
 
 \begin{document}
 
@@ -112,8 +113,7 @@
 \fontsize{11}{15}\selectfont % 字体大小和行距
 
 \input{序}
-\newpage\input{课程解读}
-\newpage\input{第一年之后}
+\newpage\input{上辑}
 \newpage\input{其它}
 \newpage\input{跋}
 }
