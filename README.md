@@ -4,6 +4,10 @@
 
 Though named after BMD, this guide may well be applicable to many other majors or tracks at TU Delft. As the cover stipulates, unless otherwise specified, all content is under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) License. Feel free to modify and utilise it as per your needs, whilst adhering to the terms of the licence. The author takes pleasure in seeing derivatives of this work and envisions it being enriched and updated in the distant future, thus leaving a legacy; aiding the author in leaving traces of his existence in the cyber world.
 
+指南里的内容，上下辑两部分：其中上辑全部学校以内，有关选课，也有关于第一年以外的实习与毕设；下辑则更多是生活方面，办银行卡，去医院，超市优惠之类。
+
+The content of this guide is divided into two parts:  The former part delves solely into university life, discussing topics such as course selection, along with internships and final projects that beyond the first year. The latter part primarily encompasses everyday life in Delft, like opening a bank account, going to the hospital, supermarket bonus etc.
+
 ## 开源许可 | Open Source License
 此项目遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可。
 
