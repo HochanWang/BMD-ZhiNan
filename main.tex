@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass{article}
-\usepackage[margin=20mm, paperwidth=185mm, paperheight=260mm]{geometry} % 设置16开纸张大小和边距
+\usepackage[margin=18mm, paperwidth=185mm, paperheight=260mm]{geometry} % 设置16开纸张大小和边距
 \usepackage[UTF8]{ctex} % 支持中文
 \usepackage{fontspec} % 使用fontspec宏包
 %\setmainfont{CMU Serif} % 设置英文字体CMU
@@ -57,6 +57,9 @@
 \renewcommand{\headrulewidth}{0pt} % 去除页眉横线
 
 \setlength\parindent{2em} %首行缩进
+
+\newlength{\betsubsec}
+\setlength{\betsubsec}{0.1\textheight}  % 定义subsection间的空白
 
 \begin{document}
 
