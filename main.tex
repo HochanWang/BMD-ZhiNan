@@ -9,14 +9,24 @@
 % Comprehensive information about the license can be found at:
 %https://creativecommons.org/licenses/by-nc/4.0/
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass{article}
-\usepackage[top=22mm, bottom=16mm, left=18mm, right=18mm, paperwidth=185mm, paperheight=260mm]{geometry} %纸张16K 和边距
+\usepackage[twoside=true,inner=19Mm,outer=12.7mm,top=20mm,bottom=18mm,paperwidth=6in,paperheight=9in]{geometry} %页边距
+
 \usepackage[UTF8]{ctex} % 支持中文
 \usepackage{fontspec} % 使用fontspec宏包
 %\setmainfont{CMU Serif} % 设置英文字体CMU
 \setmainfont{Liberation Serif} % 自由衬线
-\setCJKmainfont{SourceHanSerifSC-Medium.otf} % 设置中文字体为思源宋体
+\setCJKmainfont{SourceHanSerifSC-Medium.otf} % 设置中文正文字体为思源宋体
+\newCJKfontfamily\sectionfont{SourceHanSerifSC-Heavy.otf}
+
+%设置目录自号
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\fontsize{10.5pt}{17pt}\selectfont}  % 设定 section 标题的字号
+\renewcommand{\cftsubsecfont}{\fontsize{10.5pt}{17pt}\selectfont} % 设定 subsection 标题的字号
+\renewcommand{\cftsubsubsecfont}{\fontsize{10.5pt}{17pt}\selectfont} % 设定 subsection 标题的字号
+\renewcommand{\cftparafont}{\fontsize{10.5pt}{17pt}\selectfont}  % 设定 paragraph 标题的字号
+\renewcommand{\cftsubparafont}{\fontsize{10.5pt}{17pt}\selectfont} % 设定 subparagraph 标题的字号
+
 \usepackage{lipsum} % 用于生成随机文字
 \usepackage{ccicons} % 创作共享图标
 \usepackage{hyperref} % 提供超链接功能
@@ -40,6 +50,7 @@
 
 \usepackage{xcolor}%字体颜色
 \definecolor{light-gray}{gray}{0.8}%定义颜色light-gray
+\definecolor{dark-gray}{gray}{0.5}%定义颜色dark-gray
 \usepackage{zhnumber} % 导入将数字转换为中文数字的宏包
 %\renewcommand\thesection{\zhdigits*{\arabic{section}}} 
 % 重定义section编号的显示方式，将阿拉伯数字转换为中文的大写数字，“壹、贰、叁”形式。
@@ -56,49 +67,66 @@
 {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
 \titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
+%设置section样式
 \titleformat{\section}
-{\normalfont\fontsize{20}{25}\bfseries} %标题字号
+{\normalfont\fontsize{18}{30}\bfseries\sectionfont} %标题字号，字体
 {\thesection}
-{1em}
+{0em}
 {}
 \setcounter{section}{-1}%目录从0开始算
+
+%设置subsection样式
+\titleformat{\subsection}
+{\normalfont\fontsize{12}{27}\bfseries\sectionfont} %子标题字号，字体
+{\thesubsection}
+{1em}
+{}
+
+%设置subsubsection样式
+\titleformat{\subsubsection}
+{\normalfont\fontsize{10.5}{25}\bfseries\sectionfont} %子标题字号，字体
+{\thesubsubsection}
+{1em}
+{}
 
 \pagestyle{fancy} % 设置页面样式为fancy
 \fancyhead{} % 清空页眉设置
 \fancyfoot{} % 清空页脚设置
-\fancyhead[R]{\fontsize{14}{17}\selectfont\textbf\thepage} %右上角打上页码
+\fancyhead[LE,RO]{\fontsize{10.5}{17}\sectionfont\textcolor{dark-gray}\rightmark} %右上角打上subsection
 \renewcommand{\headrulewidth}{0pt} % 去除页眉横线
+\fancyfoot[LE,RO]{\fontsize{11}{17}\textbf{\thepage}} %页码
+\fancyfoot[RE,LO]{\textcolor{light-gray}{Copyright © 2023 by Haochen WANG （王昊辰）}}
 
 \setlength\parindent{2em} %首行缩进
 
 \newlength{\betsubsec}
-\setlength{\betsubsec}{0.1\textheight}  % 定义subsection间的空白
+\setlength{\betsubsec}{0.05\textheight}  % 定义subsection间的空白
 
 \begin{document}
 
 \begin{titlepage} % 开始创建标题页
 
-\newgeometry{vmargin={20mm}, hmargin={16mm,16mm}}  % 设置自定义边距
+\newgeometry{vmargin={20mm}, hmargin={19mm,12.7mm}}  % 设置自定义边距
 
 \vspace*{\stretch{0.382}} % 使用黄金分割比例来分配空间
 
 % 标题部分
 \begin{flushright} % 使用 flushright 环境来实现右对齐
-\fontsize{40}{10}\selectfont\textbf{BMD指南志} % \fontsize 设置特大号字体，\textbf 使文字加粗
+\fontsize{40}{10}\bfseries\sectionfont{BMD指南志} % \fontsize 设置特大号字体，\textbf 使文字加粗
 \end{flushright}
 
 \vspace*{\stretch{0.236}} % 使用黄金分割比例来分配空间
 
 % 作者部分
 \begin{flushright} % 使用 flushright 环境来实现右对齐
-\fontsize{28}{0}\selectfont{王昊辰\textsuperscript{1}} % \fontsize 设置较大号字体，\textbf 使文字加粗
+\fontsize{24}{0}\selectfont{王昊辰\textsuperscript{1}} % \fontsize 设置较大号字体，\textbf 使文字加粗
 \end{flushright}
 
 \vspace*{\stretch{0.05}} % 使用黄金分割比例来分配空间
 
 % co-author部分
 \begin{flushright} % 使用 flushright 环境来实现右对齐
-\fontsize{20}{0}\selectfont{张先治\textsuperscript{2}, 马润禹\textsuperscript{3},刘彦菁\textsuperscript{4},祁晨晨\textsuperscript{5}, 孙天辰\textsuperscript{6}} % Co-author写上
+\fontsize{16}{0}\selectfont{张先治\textsuperscript{2}, 马润禹\textsuperscript{3},刘彦菁\textsuperscript{4},祁晨晨\textsuperscript{5}, 孙天辰\textsuperscript{6}} % Co-author写上
 \end{flushright}
 
 \vspace*{\stretch{0.382}} % 使用黄金分割比例来分配空间
@@ -106,7 +134,6 @@
 % 版权信息部分
 \begin{flushright} 
 \fontsize{16}{16}\selectfont
-\footnotesize{Copyright © 2023 Haochen WANG （王昊辰）.}\\
 \footnotesize{Address: YinRen-YuShu 3401, WuXi, JiangSu, P.R.C.; 214011}\\
 \footnotesize{Contact: \href{mailto:whch.o@outlook.com}{whch.o@outlook.com}}\\
 \footnotesize{Unless otherwise noted, contents within this brochure are licensed under the \ccbyncsa\ \href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{\uline{CC BY-NC-SA 4.0}.}}\\
@@ -117,20 +144,22 @@
 
 \end{titlepage} % 结束创建标题页
 
-\fancyfoot[L]{\textcolor{light-gray}{Copyright © 2023 by Haochen WANG （王昊辰）}} %每页页脚标注，防止被中介偷掉
-
+\pagestyle{empty} % 移除目录的页眉页脚
 
 \tableofcontents % 生成目录
 
+\clearpage
 
-\newpage % 换页
+\pagestyle{fancy} % 重新设置页面样式为fancy
+\pagenumbering{arabic} % 重新开始页码计数，并应用页眉页脚样式
 
-{\section{序}
-\fontsize{11}{15}\selectfont % 字体大小和行距
+\fontsize{10.5}{15}\selectfont % 字体大小和行距
+
 
 \input{序}
 \newpage\input{上辑}
 \newpage\input{其它}
 \newpage\input{跋}
-}
+
+
 \end{document}
