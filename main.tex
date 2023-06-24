@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass{article}
-\usepackage[margin=18mm, paperwidth=185mm, paperheight=260mm]{geometry} % 设置16开纸张大小和边距
+\usepackage[top=22mm, bottom=16mm, left=18mm, right=18mm, paperwidth=185mm, paperheight=260mm]{geometry} %纸张16K 和边距
 \usepackage[UTF8]{ctex} % 支持中文
 \usepackage{fontspec} % 使用fontspec宏包
 %\setmainfont{CMU Serif} % 设置英文字体CMU
@@ -43,6 +43,19 @@
 \usepackage{zhnumber} % 导入将数字转换为中文数字的宏包
 %\renewcommand\thesection{\zhdigits*{\arabic{section}}} 
 % 重定义section编号的显示方式，将阿拉伯数字转换为中文的大写数字，“壹、贰、叁”形式。
+\setcounter{secnumdepth}{5} % 使得五级标题都有编号
+\setcounter{tocdepth}{5} % 使得五级标题都能在目录中显示
+
+% 设置paragraph的样式
+\titleformat{\paragraph}[block]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% 设置subparagraph的样式
+\titleformat{\subparagraph}[block]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 \titleformat{\section}
 {\normalfont\fontsize{20}{25}\bfseries} %标题字号
 {\thesection}
