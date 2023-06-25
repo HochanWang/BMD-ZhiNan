@@ -9,7 +9,7 @@
 % Comprehensive information about the license can be found at:
 %https://creativecommons.org/licenses/by-nc/4.0/
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass{article}
+\documentclass{book}
 \usepackage[twoside=true,inner=19mm,outer=12.7mm,top=20mm,bottom=18mm,paperwidth=6in,paperheight=9in]{geometry} %页边距
 \usepackage{emptypage} 
 \usepackage[UTF8]{ctex} % 支持中文
@@ -57,34 +57,35 @@
 \setcounter{secnumdepth}{5} % 使得五级标题都有编号
 \setcounter{tocdepth}{5} % 使得五级标题都能在目录中显示
 
-% 设置paragraph的样式
-\titleformat{\paragraph}[block]
-{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-% 设置subparagraph的样式
-\titleformat{\subparagraph}[block]
-{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
-\titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%设置chapter样式
+\titleformat{\chapter}[block] % "block"样式以匹配其他标题样式
+{\normalfont\fontsize{25}{30}\bfseries\sectionfont} %标题字号，字体
+{} %去掉编号
+{0pt} %标题和标题名之间的空格
+{\thispagestyle{fancy}} % 在每个章节的开始使用 fancy 页脚样式
+\setcounter{chapter}{-1}%目录从0开始算
+
+%\titlespacing*{\chapter}{0pt}{0pt}{20pt} %调整空白空间
+
 
 %设置section样式
 \titleformat{\section}
-{\normalfont\fontsize{18}{30}\bfseries\sectionfont} %标题字号，字体
+{\normalfont\fontsize{14}{27}\bfseries\sectionfont} %子标题字号，字体
 {\thesection}
-{0em}
+{1em}
 {}
-\setcounter{section}{-1}%目录从0开始算
 
 %设置subsection样式
 \titleformat{\subsection}
-{\normalfont\fontsize{14}{27}\bfseries\sectionfont} %子标题字号，字体
+{\normalfont\fontsize{11}{25}\bfseries\sectionfont} %子标题字号，字体
 {\thesubsection}
 {1em}
 {}
 
 %设置subsubsection样式
 \titleformat{\subsubsection}
-{\normalfont\fontsize{11}{25}\bfseries\sectionfont} %子标题字号，字体
+{\normalfont\fontsize{10.5}{25}\bfseries\sectionfont} %子标题字号，字体
 {\thesubsubsection}
 {1em}
 {}
@@ -106,7 +107,7 @@
 
 
 % 修改目录
-\renewcommand{\contentsname}{\fontsize{18}{30}\bfseries\sectionfont{索引}} %名字
+\renewcommand{\contentsname}{\fontsize{25}{30}\bfseries\sectionfont{目录}} 
 
 \newenvironment{toc}{
   \pagestyle{empty} % 在环境开始时设置页面样式为空
@@ -116,11 +117,15 @@
   \pagestyle{fancy} % 在环境结束时重新设置页面样式
 }
 
-\cftsetindents{section}{0em}{1em} %改缩进
-\cftsetindents{subsection}{1em}{2em}
-\cftsetindents{subsubsection}{2em}{2.8em}
-\cftsetindents{paragraph}{3em}{3.1em}
-\cftsetindents{subparagraph}{4em}{3.4em}
+\cftsetindents{chapter}{0em}{1em} %改缩进
+\cftsetindents{section}{1em}{2em}
+\cftsetindents{subsection}{2em}{2.8em}
+\cftsetindents{subsubsection}{3em}{3.1em}
+\cftsetindents{paragraph}{4em}{3.4em}
+
+%改enurmate样式
+\usepackage{enumitem} % 导入enumitem宏包
+\setlist[enumerate]{itemsep=0pt} % 设置所有的enumerate环境中项目之间的间距
 
 %正式开始文档
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -166,7 +171,7 @@
 
 \end{titlepage} % 结束创建标题页
 
-
+\cleardoublepage
 % 在生成目录前将页面样式设置为空
 \pagestyle{empty}
 \addtocontents{toc}{\protect\thispagestyle{empty}} % 在这里插入
@@ -176,12 +181,13 @@
 
 \thispagestyle{fancy} % Reset the style immediately after the table of contents
 \pagestyle{fancy} % 在新的一章开始时再将页面样式重新设置为fancy
-\pagenumbering{arabic} % 重新开始页码计数，并应用页眉页脚样式
-
+%\pagenumbering{arabic} % 重新开始页码计数，并应用页眉页脚样式
+\addtocounter{page}{-6}
 \fontsize{10.5}{15}\selectfont % 字体大小和行距
+\cleardoublepage
 \newpage\input{序}
 \newpage\input{上辑}
-\newpage\input{其它}
+\newpage\input{下辑}
 \newpage\input{跋}
 
 
