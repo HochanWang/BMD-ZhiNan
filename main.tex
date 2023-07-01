@@ -47,7 +47,7 @@
 \pgfplotsset{compat=1.15} %用于蜘蛛图
 \usepgfplotslibrary{polar}%用于蜘蛛图
 \usepackage{wrapfig}%用于蜘蛛图
-
+\usepackage{pdfpages}%pdf page
 \usepackage{xcolor}%字体颜色
 \definecolor{light-gray}{gray}{0.8}%定义颜色light-gray
 \definecolor{dark-gray}{gray}{0.5}%定义颜色dark-gray
@@ -60,7 +60,7 @@
 
 %设置chapter样式
 \titleformat{\chapter}[block] % "block"样式以匹配其他标题样式
-{\normalfont\fontsize{25}{30}\bfseries\sectionfont} %标题字号，字体
+{\normalfont\fontsize{35}{30}\bfseries\sectionfont} %标题字号，字体
 {} %去掉编号
 {0pt} %标题和标题名之间的空格
 {\thispagestyle{fancy}} % 在每个章节的开始使用 fancy 页脚样式
@@ -101,13 +101,13 @@
 \setlength\parindent{2em} %首行缩进
 
 \newlength{\betsubsec}
-\setlength{\betsubsec}{0.02\textheight}  % 定义subsection间的空白
+\setlength{\betsubsec}{0.01\textheight}  % 定义subsection间的空白
 
 
 
 
 % 修改目录
-\renewcommand{\contentsname}{\fontsize{25}{30}\bfseries\sectionfont{目录}} 
+\renewcommand{\contentsname}{\fontsize{35}{30}\bfseries\sectionfont{目录}} 
 
 \newenvironment{toc}{
   \pagestyle{empty} % 在环境开始时设置页面样式为空
@@ -129,17 +129,19 @@
 
 %正式开始文档
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
-\begin{titlepage} % 开始创建标题页
+\includepdf[pages=1,fitpaper=true]{cover.pdf} %封面
 
+\begin{titlepage} % 开始创建扉页
 \newgeometry{vmargin={20mm}, hmargin={19mm,12.7mm}}  % 设置自定义边距
 
 \vspace*{\stretch{0.382}} % 使用黄金分割比例来分配空间
 
 % 标题部分
 \begin{flushright} % 使用 flushright 环境来实现右对齐
-\fontsize{40}{10}\bfseries\sectionfont{BMD指南志} % \fontsize 设置特大号字体，\textbf 使文字加粗
+\fontsize{40}{10}\bfseries\sectionfont{ME指南志} % \fontsize 设置特大号字体，\textbf 使文字加粗
 \end{flushright}
 
 \vspace*{\stretch{0.236}} % 使用黄金分割比例来分配空间
@@ -190,5 +192,5 @@
 \newpage\input{下辑}
 \newpage\input{跋}
 
-
+\includepdf[pages=2,fitpaper=true]{cover.pdf} %封底
 \end{document}
