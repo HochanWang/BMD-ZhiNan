@@ -92,11 +92,11 @@
 \end{tabular}
 \end{minipage}\\
 
-这门课是在第四学期之后的两个星期进行，需要提前很久发邮件报名注册才有名额（但基本报不满）。除非对这个课题或自行车运动非常感兴趣，否则不建议选择，有这个时间不如准备可能的补考或者开始暑假，这门课的设计比较失败，感觉学不到什么。
+这门课是在第四学期之后的两个星期进行，需要提前很久发邮件报名注册才有名额（但基本报不满）。除非对这个课题或自行车运动非常感兴趣，否则不建议选择，有这个时间不如准备可能的补考或者开始暑假，这门课的设计比较失败，感觉学不到什么，实验本身不如选择其他设计类课程，更规范并且课程安排更加合理。
 
-这门课分为上课和做Project,上课的大部分内容并没有实际作用，都是非常粗浅的介绍，而且很多内容与BMD的其他课程内容有一定重复。Project的内容为预测测试者在赛道上的表现（特定场景下完成指定距离的时间等）并在最后一天进行实地测试并比较。
+这门课分为上课和做Project,上课的大部分内容并没有实际作用，都是非常粗浅的介绍，而且很多内容与BMD的其他课程内容有一定重复。由于是来自不同学校，不同专业的学生和老师，实际上课程所教授内容并不具有整体性和连贯性，更像是综述介绍研究成果最后凑在一起。Project的内容为预测测试者在赛道上的表现（特定场景下完成指定距离的时间等）并在最后一天进行实地测试并比较。
 \begin{flushright}
-张先治; 15/07/2023
+张先治/熊俊彦; 15/07/2023
 \end{flushright}
 \subsection{ME41065 System Identification and Parameter Estimation}\hypertarget{ME41065}{} 
 \begin{minipage}{0.45\textwidth}
@@ -306,6 +306,58 @@ Linux主题会涉及一些基本的操作系统概念与文件管理的方法，
 \begin{flushright}
 孙天辰； 04/06/2023
 \end{flushright}
+
+\subsection{RO47015 Applied Experimental Method}\hypertarget{RO47015}{} 
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{polaraxis}[
+    width=0.65\textwidth,
+    height=0.65\textwidth,
+    yticklabels={},
+    xtick={0,60,...,300},
+    xticklabels={知识性, 授课质量, 作业友好,工作量适宜,易通过, 有趣},
+    ymin=0,
+    ymax=5,
+    ytick={1,2,...,5},
+    y grid style={gray},
+    grid=both,
+    minor grid style=gray,
+    major grid style={gray},
+]
+\addplot[mark=*, ultra thick, black, data cs=polar] coordinates {
+    (0,4)  % 知识性得分，这里修改为你的分数
+    (60,5)  % 授课质量得分，这里修改为你的分数
+    (120,5)  % 作业友好得分，这里修改为你的分数
+    (180,4)  % 工作量得分，这里修改为你的分数
+    (240,5)  % 易通过得分，这里修改为你的分数
+    (300,5)  % 有趣得分，这里修改为你的分数
+    (360,4)  % 为了闭合图形，最后的一个点应该和第一个点一样，这里修改为你的分数
+};
+\end{polaraxis}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+\raggedleft
+\begin{tabular}{r|c}
+\textbf{ } & \textbf{22-23} \\ \hline
+通过率 & 无数据 \\ 
+平均分 & 无数据 \\ 
+参与学生数 & 无数据 \\
+学分 & 5 EC\\
+\end{tabular}
+\end{minipage}\\
+
+这门课是Robo那边的HRI方向大老板组织的课，和必修课Human Robot Interaction关联性还是蛮高的。就如课程名字所述的那样，课程本身不会涉及什么新的知识点，主要就是在七八周内选一个迷你课题，设计，实验，分析，答辩并写一篇相对简短规范的论文报告。
+
+我个人很推荐这门课的原因之一：师生比非常高，整体体验会非常好。HRI大老板下面的几乎所有老师都会过来，第一节课老师们会给出不同的方向进行选择以及实验室能提供哪些实验器材，找到自己合适的方向和队友，多跟老师进行沟通，会有很多指导交流的机会。当然，这门课答辩频率很高，每两周会进行一次进度汇报，每一次汇报哪些内容以及评分标准十分清晰，在Brightspace上都有展示，评分由学生及老师打分，有完整的评分表格和记录，基本能杜绝太强的个人主观性。
+
+这个课需要用到的知识就是基本的编程，这取决于你所选的方向，个人感觉C++、Python这两个基本上就够了。
+\begin{flushright}
+熊俊彦； 04/07/2023
+\end{flushright}
+
+
 
 
 \subsection{WI4771TU Object Oriented Scientific Programming C++}\hypertarget{WI4771TU}{} 

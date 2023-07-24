@@ -1,5 +1,55 @@
 \vspace{\betsubsec} %section间留白
 \section{ME Social Courses}
+
+\subsection[RO47008/RO47009 Robot and Society]{RO47008/RO47009 Robot and Society}\hypertarget{RO47008}{} 
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{polaraxis}[
+    width=0.65\textwidth,
+    height=0.65\textwidth,
+    yticklabels={},
+    xtick={0,60,...,300},
+    xticklabels={知识性, 授课质量, 作业友好,工作量适宜,易通过, 有趣},
+    ymin=0,
+    ymax=5,
+    ytick={1,2,...,5},
+    y grid style={gray},
+    grid=both,
+    minor grid style=gray,
+    major grid style={gray},
+]
+\addplot[mark=*, ultra thick, black, data cs=polar] coordinates {
+    (0,5)  % 知识性得分，这里修改为你的分数
+    (60,5)  % 授课质量得分，这里修改为你的分数
+    (120,5)  % 作业友好得分，这里修改为你的分数
+    (180,5)  % 工作量得分，这里修改为你的分数
+    (240,5)  % 易通过得分，这里修改为你的分数
+    (300,5)  % 有趣得分，这里修改为你的分数
+    (360,5)  % 为了闭合图形，最后的一个点应该和第一个点一样，这里修改为你的分数
+};
+\end{polaraxis}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+\raggedleft
+\begin{tabular}{r|c}
+\textbf{ } & \textbf{22-23} \\ \hline
+通过率 & 无数据 \\ 
+平均分 &  无数据\\ 
+参与学生数 &  无数据\\
+学分 & 3 EC\\
+\end{tabular}
+\end{minipage}\\
+
+这门课有两个代码，一个3EC一个4EC，虽然培养方案里给的是四学分的课，但可以三学分的课也是可以认证的。这两个的区别就是会多一个报告，我个人觉得四学分很不划算。所以在这里推荐大家上三学分的，授课考试平时的讨论没有任何区别。
+
+作业就是有几次讨论课，需要写一些简短的总结和反馈，不复杂并且不赋分，十分友好，参与就行。考试同理，开卷，可带资料，U盘以及使用谷歌等。考试就是根据材料回答问题。由于上这个课之前ChatGPT还没有出来，所以我不是很确定这种方式会不会变更，如若未变更，在这里强烈推荐这门课。
+
+\begin{flushright}
+熊俊彦； 17/07/2023
+\end{flushright}
+
 \subsection[WM0349WB Philosophy of Engineering Science and Design]{WM0349WB Philosophy of Engineering Science and Design}\hypertarget{WM0349WB}{} 
 \begin{minipage}{0.45\textwidth}
 \centering
@@ -23,7 +73,7 @@
     (60,5)  % 授课质量得分，这里修改为你的分数
     (120,5)  % 作业友好得分，这里修改为你的分数
     (180,5)  % 工作量得分，这里修改为你的分数
-    (240,3)  % 易通过得分，这里修改为你的分数
+    (240,5)  % 易通过得分，这里修改为你的分数
     (300,5)  % 有趣得分，这里修改为你的分数
     (360,3)  % 为了闭合图形，最后的一个点应该和第一个点一样，这里修改为你的分数
 };
